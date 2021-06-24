@@ -27,28 +27,41 @@
       <h1 class="display-3">Work Day Scheduler</h1>
       <p class="lead">A simple calendar app for scheduling your work day</p>
       <p id="currentDay" class="lead"></p>
+
     </header>
     <div class="container">
       <!-- Timeblocks go here -->
       <div class ="row">
-      <div class="col-sm-2 hour">8AM</div>
-      <div class="col-sm-8"><textarea class="form-control h-100 w-100 p-0"></textarea></div>
-      <div class ="col-sm-2"><button class="saveBtnh-100 h-100"><i class="fas fa-piggy-bank"></i></button>
+      <div class="col-sm-1 hour">8AM</div>
+      <div class="col-sm-10"><textarea class="form-control h-100 w-100 p-0"></textarea></div>
+      <div class ="col-sm-1"><button class="saveBtn h-300 h-100"><i class="fas fa-piggy-bank"></i></button>
+        
       </div>  
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
     <script>
     var container=$(".container")
-    var hours=["9AM","10AM","11AM","12PM","1pm","2pm","3pm","4pm","5pm"] 
+    var hours=["9AM","10AM","11AM","12PM","1pm","2pm","3pm","4pm","5pm"]
+    var militaryhours=[9,10,11,12,13,14,15,16,17]
     for (let index=0; index < hours.length; index++) {
-    container.append(`
+      //compare moment.hour()with military hour using if and else
+      var miltaryhours = moment().hour();
+   
+      container.append(`
     <div class ="row">
-      <div class="col-sm-2 hour">${hours[index]}</div>
-      <div class="col-sm-8"><textarea class="form-control h-100 w-100 p-0"></textarea></div>
-      <div class ="col-sm-2"><button class="saveBtnh-100 h-100"><i class="fas fa-piggy-bank"></i></button>
-        </div>
-        `)
+      <div class="col-sm-1 hour">${hours[index]}</div>
+      <div class="col-sm-10"><textarea class="form-control h-100 w-100 p-0"></textarea></div>
+      <div class ="col-sm-1"><button class="saveBtn h-100 h-100"><i class="fas fa-piggy-bank"></i></button>
+      </div>
+      `)
       }
+
+      var currentDay = document.querySelector("#currentDay");
+      var currentTime = moment();{
+      currentDay.textContent = currentTime.format("dddd, MMMM Do YYYY");
+      return currentDay
+      } 
+    
     </script>
   </body>
 </html>
