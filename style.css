@@ -2,7 +2,7 @@ body {
   font-family: 'Open Sans', sans-serif;
   font-size: 16px;
   line-height: 1;
-  background-color: beige;
+  background-color: slategray ;
 }
 
 textarea{
@@ -11,7 +11,7 @@ textarea{
   resize: auotmatic;
   color: #000000;
   border-left: 1px solid black;
-  padding: 10 px;
+  padding: 0px;
   width: 100%;
 }
 
@@ -71,7 +71,7 @@ h1 {text-align:Center;
   border-bottom-right-radius: 15px;
   background-color: #06AED5;
   color: white;
-  width: 200%
+  width: 150%
 }
 
 .saveBtn i:hover {
