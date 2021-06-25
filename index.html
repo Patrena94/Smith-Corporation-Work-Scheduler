@@ -31,34 +31,27 @@
     </header>
     <div class="container">
       <!-- Timeblocks go here -->
-      <div class ="row">
-      <div class="col-sm-1 hour">8AM</div>
-      <div class="col-sm-10"><textarea class="form-control h-100 w-100 p-0"></textarea></div>
-      <div class ="col-sm-1"><button class="saveBtn h-300 h-100"><i class="fas fa-piggy-bank"></i></button>
       </div>  
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
     <script src="./script.js"></script>
   <script>
-    // const moment = require("moment");
-    //const d= new Date ('2021/06/23');
-    // moment(d).format('MMMM d, YYYY'); //June 23, 2021
 
     var container=$(".container")
     var hours=["9AM","10AM","11AM","12PM","1pm","2pm","3pm","4pm","5pm"]
     var militaryhours=[9,10,11,12,13,14,15,16,17]
     for (let index=0; index < hours.length; index++) {
       //compare moment.hour()with military hour using if and else
-      var m = moment().hour();
-      var d = moment().hour(8);
-      //if(currentTime<hours.lenght);{future()}
-      //if(currentTime===hours.length);{present()}
-      //if(currentTime > hours.length); {past()}
+      var currentHour=moment().format("HH")
+      var textareaColor=("")
+      if(currentHour > militaryhours[index]){textareaColor="past"}     
+      if(currentHour==militaryhours[index]){textareaColor="present"}
+      if(currentHour < militaryhours[index]){textareaColor ="future"}
    
       container.append(`
       <div class ="row">
       <div class="col-sm-1 hour">${hours[index]}</div>
-      <div class="col-sm-10"><textarea class="form-control h-100 w-100 p-0"></textarea></div>
+      <div class="col-sm-10"><textarea class="form-control h-100 w-100 p-0 ${textareaColor}"></textarea></div>
       <div class ="col-sm-1"><button class="saveBtn h-300 h-100"><i class="fas fa-piggy-bank"></i></button>
       </div>  
       `)}
@@ -69,8 +62,6 @@
     return currentDay;
      }
      displayDate()
-   // var rightNow= moment().format("MMMM Do, YYYY");
-//console.log(rightNow);
     </script>
   </body>
 </html>
