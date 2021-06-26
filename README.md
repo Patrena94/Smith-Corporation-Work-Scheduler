@@ -24,3 +24,15 @@ added date to the document work Scheduler.
       var currentTime = moment();{
       currentDay.textContent = currentTime.format("dddd, MMMM Do YYYY");
       return currentDay 
+         <div class ="time-block" id="task-form-control" tabindex="1" role="dialog" aria-labelledby ="task-form-control" area-hidden="true">
+      <div class ="time-block-dialog modal-dialog-centered" role="document">
+      <div class = "time-block-content">
+        <div class ="time-block-header">
+          <h2 class="time-block-title" id="task-form-modal">Add New task</h2>
+          <button type="button" class="close" data dismiss="time-block" aria-label = "Close">
+           <span aria-hidden="true">&times;</span> 
+          </button>
+        </div>
+      </div>
+      </div>  
+      </div>

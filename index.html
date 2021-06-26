@@ -30,14 +30,16 @@
 
     </header>
     <div class="container">
-      <!-- Timeblocks go here -->
+    </div>
+</div>
       </div>  
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
     <script src="./script.js"></script>
   <script>
+    $(document).ready(function(){
 
-    var container=$(".container")
+      var container=$(".container")
     var hours=["9AM","10AM","11AM","12PM","1pm","2pm","3pm","4pm","5pm"]
     var militaryhours=[9,10,11,12,13,14,15,16,17]
     for (let index=0; index < hours.length; index++) {
@@ -50,9 +52,9 @@
    
       container.append(`
       <div class ="row">
-      <div class="col-sm-1 hour">${hours[index]}</div>
-      <div class="col-sm-10"><textarea class="form-control h-100 w-100 p-0 ${textareaColor}"></textarea></div>
-      <div class ="col-sm-1"><button class="saveBtn h-300 h-100"><i class="fas fa-piggy-bank"></i></button>
+      <div class="col-sm-1 hour" id="hour${index}"><button class="timeblockBtn h-300 h-100">${hours[index]}</div>
+      <div class="col-sm-10"><textarea id="assignTaskDescription" class="formControl h-100 w-100 p-0 ${textareaColor}"></textarea></div>
+      <div class="col-sm-1"><button class="saveBtn h-300 h-100"><i class="fas fa-piggy-bank"></i></button>
       </div>  
       `)}
     function displayDate(){
@@ -62,6 +64,41 @@
     return currentDay;
      }
      displayDate()
+
+     var saveBtn=function(){
+      
+    };
+    var saveEl=$(".saveBtn");
+  //  console.log(saveEl)
+    saveEl.on("click", function(){
+      var input=$(this).parents().eq(0).siblings(".col-sm-10").children("#assignTaskDescription").val();
+      var time=$(this).parents().eq(0).siblings(".hour").children().text();
+      console.log(time);
+      console.log(input);
+      localStorage.setItem(time, input);
+      console.log("clicked");
+    });
+  //   var formControl = documentquerySelector("#formControl")
+  // timeblockBtn.addEventListener("click", function(){
+    // <form>
+    //     <div class="formControl">
+    //      <label for="assignTaskDescription">Task description</label>
+    //       <textarea id="assignTaskDescription" rows="3" class="formControl"></textarea>
+    //     </div>
+    //     <div class="formControl">
+    //       <label for="assignDueTime">Due Time</label>
+    //      <input type="text" class="formControl" id="modalDueTime" placeholder="HH" autocomplete="off" />
+    //     </div>
+    // <div class="form-footer">
+    //   <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+    //   <button type="button" class="btn btn-primary">Save Task</button>
+    // </form>
+  // })  
+
+
+
+    })
+    
     </script>
   </body>
 </html>

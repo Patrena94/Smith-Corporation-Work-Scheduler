@@ -64,7 +64,14 @@ h1 {text-align:Center;
   background-color: #77dd77;
   color: white;
 }
-
+.timeblockBtn {
+  border-right: 1px solid black;
+  border-top-left-radius: 15px;
+  border-bottom-left-radius: 15px;
+  background-color: #06AED5;
+  color: white;
+  width: 150%  
+}
 .saveBtn {
   border-left: 1px solid black;
   border-top-right-radius: 15px;
