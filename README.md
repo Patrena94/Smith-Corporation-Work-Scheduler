@@ -9,30 +9,12 @@ added the radius (left, top and bottom) to the .hour class. Changed the border t
 adjusted the button to fit the .savebtn area. 
 adjusted the wireframe from sm-2 to 2m-1; sm-8 to sm-10.
 added date to the document work Scheduler.
-
- var currentDay = document.querySelector("#currentDay");
-      var currentTime = moment();{
-      currentDay.textContent = currentTime.format("dddd, MMMM Do YYYY");
-      return currentDay
-      }
-       //const moment = require('moment');
-    // const d= new Date ('2021/06/23');
-    // moment(d).format('MMMM d, YYYY'); //June 23, 2021
-
-       }
-    var currentDay = document.querySelector("#currentDay");
-      var currentTime = moment();{
-      currentDay.textContent = currentTime.format("dddd, MMMM Do YYYY");
-      return currentDay 
-         <div class ="time-block" id="task-form-control" tabindex="1" role="dialog" aria-labelledby ="task-form-control" area-hidden="true">
-      <div class ="time-block-dialog modal-dialog-centered" role="document">
-      <div class = "time-block-content">
-        <div class ="time-block-header">
-          <h2 class="time-block-title" id="task-form-modal">Add New task</h2>
-          <button type="button" class="close" data dismiss="time-block" aria-label = "Close">
-           <span aria-hidden="true">&times;</span> 
-          </button>
-        </div>
-      </div>
-      </div>  
-      </div>
+added the for loop for time and time to the schedule
+coverted hours to military time.  Added color coded time blocks (textarea color) for past, present, and future. 
+worked with Jaime on the local storage.
+removed pop up form attached to the time button, since this form is not required. 
+align button to be flushed against the textara column.
+removed white border from row. 
+added black border to textarea.
+added teal hover to image of savebutton.
+changed border-right and border-left to border for saveBtn and timeblockBtn
